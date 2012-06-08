@@ -1,0 +1,75 @@
+/*
+ * Tiny Form Popup default css stylings for OpenLearning
+ * Initially written by Jenna Fox <a@creativepony.com>
+ * 2011-6-22
+ */
+
+.tiny-form-popup {
+	border: 1px solid #666;
+	background-color: white;
+	position: absolute;
+	/*margin-top: -24px; /* .notch top + .notch (height / 2) */
+	/*margin-left: 10px; /* .notch margin-left, but positive */ 
+	padding: 5px;
+	width: 290px;
+	
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.tiny-form-popup .tfp-notch {
+	background-image: url(spouts.png);
+	background-repeat: no-repeat;
+	position: absolute; /* now it takes up no space inside the .tiny-form-popup */
+}
+
+/* align spout with top,left coords when positioned */
+.tiny-form-popup.tfp-left-edge, .tiny-form-popup.tfp-right-edge { margin-top: -25px; } /* notch top + notch height/2 */
+.tiny-form-popup.tfp-top-edge, .tiny-form-popup.tfp-bottom-edge { margin-left: -151px; } /* outer width / 2 */
+
+/* left and right notch bubbles */
+.tiny-form-popup .tfp-notch-left, .tiny-form-popup .tfp-notch-right {
+	width: 10px; /* should always be half of height and <= 47px (due to notch image) */
+	height: 20px;
+	top: 15px; /* at least half of height + border radius of parent */
+}
+
+.tiny-form-popup .tfp-notch-top, .tiny-form-popup .tfp-notch-bottom {
+	width: 20px; /* should always be twice of height and <= 94px (due to notch image) */
+	height: 10px;
+	left: 50%; /* offset left to middle, then slip it back half it's height */
+	margin-left: -10px; /* half of width */
+}
+
+/* left notch */
+.tiny-form-popup .tfp-notch-left {
+	background-position: left center;
+	margin-left: -10px; /* (0 - width) */
+	left: 0;
+}
+
+/* right notch */
+.tiny-form-popup .tfp-notch-right {
+	background-position: right center;
+	margin-right: -10px; /* (0 - width) */
+	right: 0;
+}
+
+/* top notch */
+.tiny-form-popup .tfp-notch-top {
+	background-position: center top;
+	margin-top: -10px; /* (0 - width) */
+	top: 0;
+}
+
+/* bottom notch */
+.tiny-form-popup .tfp-notch-bottom {
+	background-position: center bottom;
+	margin-bottom: -10px; /* (0 - width) */
+	bottom: 0;
+}
+
+/* hide form content bits usually - gracefully degrading without JS */
+.tiny-form-content { display: none; }
+.tiny-form-content:target { display: block; }
